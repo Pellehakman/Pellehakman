@@ -202,7 +202,7 @@ function displayLifeTimeStats(pathAllStats){
 // wins
      
 }
-let gamemode = `squad-fpp`
+let gamemode = `squad`
 
 
 // gameModeSelect.addEventListener('change', function() {
