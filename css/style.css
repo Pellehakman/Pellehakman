@@ -62,6 +62,9 @@ a{
 .green{
     background-color: var(--bg-green);
 }
+.hide{
+    display: none;
+}
 .wrapper{
     flex-direction: column;
     height: 100vh;
