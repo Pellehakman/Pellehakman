@@ -2,6 +2,7 @@
 :root {
     
     --bg-white: #ffffff;
+    --bg-med-white: #f5f5f5;
     --bg-light-grey:#f1f1f1;
     --bg-med-grey: #c9c9c9;
     --bg-heavy-grey: #868686;
@@ -203,6 +204,11 @@ a{
     padding: 1rem   ; 
     gap: 1rem;
 }
+
+.main--menu-btn-container{
+    flex-wrap: wrap;
+    gap: 1rem;
+}
 .top-menu{
     font-family: var(--ff-roboto);
     font-weight: var(--fw-m);
@@ -217,14 +223,16 @@ a{
     font-family: var(--ff-roboto);
     font-weight: var(--fw-s);
     font-size: var(--fs-m);
-    color: var(--bg-black);
-    background-color: var(--bg-white);
-    padding: .5rem 2rem .5rem 2rem;
+    color: var(--bg-white);
+    background-color: var(--bg-black);
+    padding: 1rem 2rem 1rem 2rem;
+    border: none;
 
 }
 .main--menu-btn-drop{  
     position: absolute;
     flex-direction: column;
+    
 }
 
 .main--menu-opt{
@@ -232,15 +240,14 @@ a{
     font-family: var(--ff-roboto);
     font-weight: var(--fw-s);
     font-size: var(--fs-m);
-    color: var(--bg-black);
-    background-color: var(--bg-white);
-    padding: .5rem 2rem .5rem 2rem;
-    
-    
-    
-    
-   
-    
+    color: var(--bg-white);
+    background-color: var(--bg-dark-grey);
+    padding: 1rem 2rem 1rem 2rem;    
+    border: none;        
+}
+.main--menu-opt:hover{
+    background-color: var(--bg-black);
+            
 }
 
 
@@ -254,7 +261,7 @@ a{
 
 
 .player-box{
-    background-color: var(--bg-light-grey)  ;
+    background-color: var(--bg-med-white)  ;
     flex-wrap: wrap;
     flex: 1;
     flex-direction: column;
