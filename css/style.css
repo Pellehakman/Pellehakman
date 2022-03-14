@@ -16,10 +16,10 @@
     --bg-green: #347037;
 
 
-    --fs-list-w: 1rem;
+    --fs-list-w: 0.8rem;
     --fs-m: 1.5rem;
-    --fs-s: 1.2rem;
-    --fs-m: 1.5rem;
+    --fs-s: 1rem;
+    --fs-ms: 1.2rem;
     --fs-l: 1.6rem;
     --fs-xl: 1.7rem;
     --fs-xxl: 2.1rem;
@@ -77,15 +77,17 @@ a{
 .nav--top{
     background-color: var(--bg-dark-grey);
     justify-content: center;
+    
 }
 
 .nav--top-container{
-    flex-wrap: wrap;
+    
     padding: .5rem 0 .5rem 0;
     max-width: 80rem;  
     justify-content: space-between;
     color: var(--bg-white);
     flex: 1; 
+    
 }
 
 .nav--top-info{
@@ -153,11 +155,11 @@ a{
 }
 
 .nav--main-input{
-    font-family: var(--ff-roboto);
-    font-size: var(--fs-m) ;
+    font-family: var(--ff-arial);
+    font-size: var(--fs-s) ;
     font-weight:var(--fw-s);
     height: 2rem;
-    text-align: center; 
+    padding-left: 1rem; 
 }
 
 
@@ -166,12 +168,12 @@ a{
 /*-------- size config START --------*/
 
 .left--border{
-    background-color:var(--bg-light-grey);
+    background-color:var(--bg-white);
     flex: 1;
     
 }
 .right--border{
-    background-color:var(--bg-light-grey);    
+    background-color:var(--bg-white);    
     flex: 1;
 
 }
@@ -181,9 +183,9 @@ a{
 }
 .main{      
     justify-content: center;      
-    background-color: #ffffff;    
+    background-color: var(--bg-light-grey)  ;
     flex-wrap: wrap ;  
-    flex: 5;
+    flex: 4;
     padding: 1rem;   
     gap: 1rem;
 }
@@ -197,58 +199,54 @@ a{
 }
 
 .main--container-top{
-    /* flex: 1;     */
+    
+    flex-direction: column;    
     align-items: center;
-    background-color: var(--bg-light-grey)  ;
-    margin-bottom: 1rem;   
-    padding: 1rem   ; 
-    gap: 1rem;
-}
-
-.main--menu-btn-container{
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-.top-menu{
-    font-family: var(--ff-roboto);
-    font-weight: var(--fw-m);
-    font-size: var(--fs-m);
-    color: var(--bg-white);
-    background-color: var(--bg-black);
-    padding: 1rem 4rem 1rem 4rem;
-}
-
-.main--menu-btn{
-    text-align: center;
-    font-family: var(--ff-roboto);
-    font-weight: var(--fw-s);
-    font-size: var(--fs-m);
-    color: var(--bg-white);
-    background-color: var(--bg-black);
-    padding: 1rem 2rem 1rem 2rem;
-    border: none;
-
-}
-.main--menu-btn-drop{  
-    position: absolute;
-    flex-direction: column;
+    
+    margin-bottom: 1rem;
+     
+    
     
 }
 
-.main--menu-opt{
-    justify-content: center;
-    font-family: var(--ff-roboto);
-    font-weight: var(--fw-s);
-    font-size: var(--fs-m);
-    color: var(--bg-white);
-    background-color: var(--bg-dark-grey);
-    padding: 1rem 2rem 1rem 2rem;    
-    border: none;        
-}
-.main--menu-opt:hover{
+.container-top-high{
+    justify-content: center;    
     background-color: var(--bg-black);
-            
+    color: var(--bg-white);
+    width: 100%;
+    font-family: var(--ff-saira);
+    font-size: var(--fs-xxl);
+    font-weight: 400;
+    color: var(--bg-white);
+    
+   
+
 }
+
+
+.container-top-low{
+    
+    
+    width: 100%;
+    flex: 1;
+    gap: 1rem;
+}
+
+.container-top-btn{
+    align-items: center; 
+    flex: 1;
+    justify-content: center;
+    font-family: var(--ff-saira);
+    font-size: var(--fs-ms);
+    line-height: 100%;
+    border: none;
+    
+    background-color: var(--bg-white);
+
+    
+}
+
+
 
 
 
@@ -261,21 +259,15 @@ a{
 
 
 .player-box{
-    background-color: var(--bg-med-white)  ;
+    background-color: var(--bg-white)  ;
     flex-wrap: wrap;
     flex: 1;
     flex-direction: column;
     font-family: var(--ff-roboto);
     font-size: var(--fs-m);
     font-weight: var(--fw-m);
-    color: var(--bg-white);
-    
+    color: var(--bg-white);    
 }
-
-
-
-
-
 
 .player-header-box{
     align-items: center;
@@ -290,13 +282,8 @@ a{
     justify-content: center;
     width: 1.8rem;
     height: 1.8rem; 
-    margin: .3rem ;   
-       
-
+    margin: .3rem ;        
 }
-
-
-
 
 .header-player{
     font-size: var(--fs-m);
@@ -307,18 +294,6 @@ a{
 
 
 
-
-
-
-
-
-
-.footer{
-    
-    background-color: var(--bg-dark-grey)  ;
-    flex: 1;
-    
-}
 /*--------- size config END ---------*/
 
 /*-------- TOP INFO START --------*/
@@ -332,14 +307,14 @@ a{
 
 .stats-list{
     padding: .2rem 1rem .2rem 1rem;
-    font-family: var(--ff-assistant);
+    font-family: var(--ff-arial);
     justify-content: space-between;
     /* border-bottom: #ffffff solid 1px; */
 }
 
 .list-what{
     font-size: var(--fs-list-w);
-    font-weight: var(--fw-s);
+    font-weight: var(--fw-xs);
     color: var(--bg-heavy-grey);
 }
 
@@ -347,4 +322,14 @@ a{
     font-size: var(--fs-list-w);
     font-weight: var(--fw-m);
     color: var(--bg-dark-grey);
+}
+
+
+
+
+.footer{
+    
+    background-color: var(--bg-dark-grey)  ;
+    flex: 1;
+    
 }
