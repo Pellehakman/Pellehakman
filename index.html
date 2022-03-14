@@ -29,9 +29,10 @@
                     <li class="nav--main-item"><a href="#score">TOURNAMENT</a></li>
                     <li class="nav--main-item"><a href="#stats">STATS</a></li>
                     <li class="nav--main-item"><a class="active" href="#leaderboard">LEADERBOARD</a></li>
-                    <li class="nav--main-item"><a href="#about">ABOUT</a></li>
-                    <div class="flex nav--main-search"> <input class="nav--main-input" id="input-player" type="text" placeholder="Find player">
-                        <button id="player-search-btn">SÖK</button></div>
+                    <!-- <li class="nav--main-item"><a href="#about">ABOUT</a></li> -->
+                    <div class="flex nav--main-search"> <input class="nav--main-input" id="input-player" type="text" 
+                        placeholder="enter your text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'search for player'">
+                        <button class="flex player--search-btn" id="player-search-btn"><img src="/svgs/Search black.svg" alt=""></button></div>
                         <!-- <button id="search-btn">ALL SÖK</button> -->
                    </ul>
                    <ul>         
@@ -54,20 +55,47 @@
 <!-- MAIN CONTAINER START -->
         <div class="flex main--container"> 
                 <div class="flex main--container-top">
-
-
                     <div class="flex container-top-high">
                         <span class="flex container-top-item">ALL TIME STATS</span>
+
+                    <div class="flex container-select-box">
+                        <select class="container-top-select" name="" id="">
+                            <option value="ranked">RANKED</option>
+                            <option value="normal">NORMAL</option>
+                        </select>
+                        <select class="container-top-select" name="" id="">
+                            <option value="ranked">SOLO FPP</option>
+                            <option value="normal">DUO FPP</option>
+                            <option value="normal">SQUAD FPP</option>
+                            <option value="normal">SOLO TPP</option>
+                            <option value="normal">DUO TPP</option>
+                            <option value="normal">SQUAD TPP</option>
+                        </select>
+                        <select class="container-top-select" name="" id="">
+                            <option value="ranked">TODAYS'S SESSION</option>
+                            <option value="normal">YESTERDAY'S SESSION</option>
+                        </select>
+                        <select class="container-top-select" name="" id="">
+                            <option value="ranked">SEASON 16</option>
+                            <option value="normal">SEASON 15</option>
+                            <option value="normal">SEASON 14</option>
+                        </select>
+                        <select class="container-top-select" name="MATCHES" id="">
+                            <option value="ranked">MATCHES - MIRAMAR</option>
+                            <option value="normal">MATCHES - ERANGEL</option>
+                        </select>
                     </div>
-
+                    <!-- <div class="flex container-top-high">
+                        <span class="flex container-top-item">ALL TIME STATS</span>
+                    </div>
                     <div class="flex container-top-low"> 
-                        <button class="flex container-top-btn">SQUAD</button>
-                        <button class="flex container-top-btn">LAST SESSION</button>
-                        <button class="flex container-top-btn">SEASON 16</button>
-                        <button class="flex container-top-btn">MATCH MIRAMAR</button>
-                        
-                        
-
+                        <div class="flex container-btn-box"><button class="flex container-top-btn ">RANKED<img src="/svgs/down white.svg" alt=""></button>
+                        <button class="flex container-drop-btn">NORMAL</button></div>
+                        <div class="flex container-btn-box"><button class="flex container-top-btn">SQUAD FPP <img src="/svgs/down white.svg" alt=""></button></div>
+                        <div class="flex container-btn-box"><button class="flex container-top-btn">LAST SESSION <img src="/svgs/down white.svg" alt=""></button></div>
+                        <div class="flex container-btn-box"><button class="flex container-top-btn">SEASON 16 <img src="/svgs/down white.svg" alt=""></button></div>
+                        <div class="flex container-btn-box"><button class="flex container-top-btn">MATCH MIRAMAR <img src="/svgs/down white.svg" alt=""></button></div>
+                    </div> -->
                     </div>
                 </div> 
 
@@ -77,12 +105,14 @@
 
                 <div class="flex player-box player-1">  
 
-                    <div class="flex">
+                    <div class="flex player">                       
                         <div class="flex player-header-box">
-                            <div class="flex header-number-box yellow">1</div>
+                            <div class="flex header-number-box yellow">1</div>                     
                             <span class="flex header-player" data-player-id></span>
+                            <input class="flex player-box-input" type="text" placeholder="search for player">
+                            <button class="flex player-box-add"> <img src="/svgs/add.svg" alt=""></button>                         
                         </div>
-                </div>
+                    </div>
                 
                 <div class="flex stats-list"><span class="list-what">kills: </span> <span class="list-quant" data-kills>TBD</span></div>
                 <div class="flex stats-list"><span class="list-what">assists: </span> <span class="list-quant" data-assists>TBD</span></div>
@@ -165,7 +195,7 @@
 
 
         <div class="flex footer">
-d
+
         </div>
 
 
