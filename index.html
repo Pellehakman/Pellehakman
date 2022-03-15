@@ -30,9 +30,9 @@
                     <li class="nav--main-item"><a href="#stats">STATS</a></li>
                     <li class="nav--main-item"><a class="active" href="#leaderboard">LEADERBOARD</a></li>
                     <!-- <li class="nav--main-item"><a href="#about">ABOUT</a></li> -->
-                    <div class="flex nav--main-search"> <input class="nav--main-input" id="input-player" type="text" 
+                    <div class="flex nav--main-search"> <input class="nav--main-input"  type="text" 
                         placeholder="enter your text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'search for player'">
-                        <button class="flex player--search-btn" id="player-search-btn"><img src="/svgs/Search black.svg" alt=""></button></div>
+                        <button class="flex player--search-btn" ><img src="/svgs/Search white.svg" alt=""></button></div>
                         <!-- <button id="search-btn">ALL SÖK</button> -->
                    </ul>
                    <ul>         
@@ -123,11 +123,13 @@
 
                     <div class="flex player">                       
                         <div class="flex player-header-box">
-                            <div class="flex header-number-box yellow">1</div>                     
-                            <span class="flex header-player " data-player-id></span>
+                            <div class="flex">
+                                <div class="flex header-number-box yellow">1</div><span id="header-player" class="flex header-player hide"data-player-id></span> 
+                            </div>                  
+                            
                             <!-- hide above -->
-                            <input class="flex player-box-input" type="text" placeholder="search for player">
-                            <button class="flex player-box-add"> <img src="/svgs/add.svg" alt=""></button>                         
+                            <input id="input-player" class="flex player-box-input"  type="text" placeholder="search for player">
+                            <button id="player-search-btn"  class="flex player-box-add"> <img class="flex add-img" title="click to add or remove" src="/svgs/add.svg" alt=""></button>                         
                         </div>
                     </div>
                 

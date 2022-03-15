@@ -4,6 +4,10 @@ const searchInput = document.querySelector('#input-player')
 
 const gameModeSelect = document.querySelector('#gamemode')
 
+const playerSearchInput = document.querySelector('#player-search-input')
+
+const headerPlayer = document.querySelector('#header-player')
+
 
 const TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjMGUwMGM2MC01ODUzLTAxM2EtY2FjYi0zNWM2YWU1NzY4MmIiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNjQyMjY2NTM5LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6InNxdGF0In0.cSGggAHy9gLhqW2Z5AZdUTreFQZfLxFZKa7-UK1iFxU';
 const ListElem = document.querySelector('#track-list')
@@ -83,6 +87,9 @@ function displayMatches(fetchMatches){
 
 playerSearchBtn.addEventListener('click', async () => {
     let playerName = searchInput.value;
+    searchInput.classList.toggle('hide');
+    headerPlayer.classList.toggle('hide');
+
     
     // const query = inputElem.value;
     
