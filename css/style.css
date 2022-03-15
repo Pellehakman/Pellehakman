@@ -39,6 +39,12 @@
     
     
   } */
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -301,16 +307,19 @@ a{
     text-align: center;    
     align-items: center;
     justify-content: center;
-    height: 1.6rem;
-    width: 1.6rem;
+    height: 1.9rem;
+    width: 1.9rem;
+    
 }
 
 .player{
     padding: .5rem .5rem .5rem .5rem;
     background-color: #181818;
+    margin-bottom: 1rem;
 }
 
 .header-player{
+    padding-left: .5rem;
     font-family: var(--ff-saira);
     font-size: var(--fs-ms);
     font-weight: var(--fw-s);  
@@ -331,6 +340,8 @@ a{
     font-family: var(--ff-saira);
     font-size: var(--fs-ms);
     font-weight: var(--fw-s);
+   flex: 1;
+   padding-left: .5rem;
 
 
     
@@ -376,7 +387,7 @@ a{
 
 
 .stats-list{
-    padding: .2rem 1rem .2rem 1rem;
+    padding: 0 1rem .4rem 1rem;
     font-family: var(--ff-arial);
     justify-content: space-between;
     /* border-bottom: #ffffff solid 1px; */
