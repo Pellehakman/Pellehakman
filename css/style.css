@@ -216,6 +216,7 @@ a{
 }
 .player--search-btn:active{
     background-color: #3b3b3b73; 
+    
 
 }
 .player--search-btn img{    
@@ -310,6 +311,7 @@ a{
 }
 
 .player-box{
+    
     background-color: var(--bg-white)  ;
     flex-wrap: wrap;
     flex: 1;
@@ -325,6 +327,7 @@ a{
     align-items: center;         
     flex: 1;      
     justify-content: space-between;
+    
 }
 
 .header-number-box{
@@ -333,10 +336,12 @@ a{
     justify-content: center;
     height: 2rem;
     width: 2rem;
+    border-radius: 10%;
     
 }
 
 .player{
+    
     
     background-color: #181818;
     margin-bottom: 1rem;
@@ -357,6 +362,7 @@ a{
 }
 
 .player-box-input{
+    
     padding-left: .5rem;
     flex: 1;
     background:none;
@@ -373,35 +379,28 @@ a{
 }
 
 .player-box-add{
-    font-family: var(--ff-saira);
-    font-size: var(--fs-m);
-    font-weight: var(--fw-m);
-    align-items: center;
-    justify-content: center;
-    line-height: 100%;
+    font-family: var(--ff-arial);
+    font-size: var(--fs-s);
+    font-weight: var(--fw-s);   
     height: 2rem;
-    width: 2rem; 
-    background-color: rgba(29, 116, 51, 0)    ;
+    width: 2rem;    
+    border-radius: 10%;
     border: none;
-    transition: .1s;
-    
-    cursor: pointer;
-    border-radius: 1000px;
-    
+    background-color: rgb(20, 95, 73);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: 40ms;  
 }
+
 .player-box-add:hover{    
-    background-color: rgba(146, 146, 146, 0.377);    
+    background-color: rgb(23, 109, 83);    
 }
-.player-box-add:active{    
-    background-color: rgba(63, 63, 63, 0.377);    
+.player-box-add:active{ 
+    height: 1.9rem;
+    width: 1.9rem;    
+    background-color: rgb(14, 61, 47);    
 }
-.add-img{    
-    border-radius: 1000px;
-    height: 1.4rem;
-    width: 1.4rem;  
-}
-
-
 
 
 @media screen and (max-width: 605px) {
