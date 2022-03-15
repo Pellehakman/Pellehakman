@@ -221,7 +221,7 @@ a{
     flex: 4;
     padding: 1rem;   
     gap: 1rem;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 
 
@@ -269,7 +269,7 @@ a{
     padding: 0 .5rem 0 .5rem; 
     border: 1px solid rgb(48, 48, 48);    
     font-family: var(--ff-saira);
-    font-size: var(--fs-m);
+    font-size: var(--fs-s);
     background-color: var(--bg-dark-grey);
     color: var(--bg-white);        
 }
@@ -301,22 +301,19 @@ a{
     text-align: center;    
     align-items: center;
     justify-content: center;
-    height: 2rem;
-    width: 2rem;
-    
-    
-    
-     
-         
+    height: 1.6rem;
+    width: 1.6rem;
 }
+
 .player{
-    padding: .5rem;
+    padding: .5rem .5rem .5rem .5rem;
     background-color: #181818;
 }
 
 .header-player{
-    font-size: var(--fs-m);
-    font-weight: var(--fw-s);    
+    font-family: var(--ff-saira);
+    font-size: var(--fs-ms);
+    font-weight: var(--fw-s);  
 }
 
 .player-box-search{
@@ -334,7 +331,7 @@ a{
     font-family: var(--ff-saira);
     font-size: var(--fs-ms);
     font-weight: var(--fw-s);
-    text-align: center;
+
 
     
 }
@@ -346,15 +343,14 @@ a{
     align-items: center;
     justify-content: center;
     line-height: 100%;
-    height: 2rem;
-    width: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
     background-color: var(--bg-dark-grey);
     border: none;
     
 }
 .player-box-add img{
-    width: 2rem;    
-    padding: .5rem;    
+    width: 1rem;       
     border-radius: 100%;
     transition: .1s;
 }
