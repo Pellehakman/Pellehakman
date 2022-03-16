@@ -404,9 +404,14 @@ a{
 
 
 @media screen and (max-width: 605px) {
+    .nav--top-info{
+        display: none;
+    }
     
     .nav--main-menu{
             justify-content: center;
+            gap: 0;
+            padding: 0;
       }
     
     .nav--main-logo{
@@ -414,10 +419,14 @@ a{
       }
     
     .nav--main-item{
+        text-align: center;
+        flex: 1;
         font-family: var(--ff-saira);
         font-size:var(--fs-s);
         font-weight: 400;
-        gap: 0.1rem;
+        border: 1px solid rgb(44, 44, 44);
+        
+
         background-color: #000000;
       }
     .left--border{
