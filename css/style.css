@@ -15,7 +15,6 @@
     --bg-orange: #df5a25;
     --bg-green: #347037;
 
-
     --fs-list-w: 0.8rem;
     --fs-xs: 1rem;
     --fs-s: 1rem;
@@ -84,6 +83,7 @@ a{
     width: 100vw;
     overflow-x: hidden;    
 }
+/* -----------------------------------  MENU START ------------------------------------ */
 
 .nav--top{
     background-color: var(--bg-dark-grey);
@@ -146,12 +146,8 @@ a{
     hsl(243deg 32% 15%) 85%,
     hsl(241deg 37% 16%) 92%,
     hsl(238, 43%, 16%) 100%);
-
-    justify-content: center;  
-      
-}
-
-  
+    justify-content: center;        
+}  
 
 .nav--main-menu{   
     flex: 1;
@@ -174,8 +170,7 @@ a{
 }
 
 
-.nav--main-item{   
-    
+.nav--main-item{       
     font-family: var(--ff-roboto);
     font-size: var(--fs-xl);
     font-weight: 700;
@@ -183,51 +178,11 @@ a{
     padding: .5rem 1rem .5rem 1rem;
 }
 
-.nav--main-input{
-    text-align: center;
-    font-family: var(--ff-roboto);    
-    font-style: italic;
-    font-size: var(--fs-s);
-    min-width: max-content;
-    
-    height: 2rem;    
-    border-radius:  2rem 0 0 2rem;
-    border: 1px solid rgba(231, 231, 231, 0.39);
-    color: var(--bg-white);
-    background-color: #00000073;   
-    cursor: pointer;
-}
-
-.player--search-btn{
-    border-radius:  0 2rem 2rem 0;
-    border: none;
-    height: 2rem;
-    background-color: #00000073; 
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem 0 1rem;
-    border: 1px solid rgba(231, 231, 231, 0.39);
-    border-left: none;
-    transition: 50ms;
-}
-.player--search-btn:hover{
-    background-color: #50505073; 
-
-}
-.player--search-btn:active{
-    background-color: #3b3b3b73; 
-    
-
-}
-.player--search-btn img{    
-    height: 1rem;   
-   
-}
+/* -----------------------------------  MENU END ------------------------------------ */
 
 
 
-
-/*-------------------- MAIN START -----------------------*/
+/* -----------------------------------  MAIN START ------------------------------------ */
 
 /*-------- size config START --------*/
 
@@ -251,10 +206,7 @@ a{
     flex: 4;
     padding: 1rem;   
     gap: 1rem;
-    /* margin-top: 1rem; */
 }
-
-
 
 .main--container{    
     flex: 1;    
@@ -262,8 +214,7 @@ a{
     flex-wrap: wrap;   
 }
 
-.main--container-top{
-    
+.main--container-top{    
     flex-direction: column;    
     align-items: center;    
     margin-bottom: 1rem;    
@@ -272,8 +223,7 @@ a{
 .container-top-item{
     padding-left: 1rem;
 }
-.container-top-high{
-       
+.container-top-high{       
     background-color:var(--bg-black);
     color: var(--bg-white);
     width: 100%;
@@ -310,8 +260,7 @@ a{
     gap: 1rem;
 }
 
-.player-box{
-    
+.player-box{    
     background-color: var(--bg-white)  ;
     flex-wrap: wrap;
     flex: 1;
@@ -327,7 +276,6 @@ a{
     align-items: center;         
     flex: 1;      
     justify-content: space-between;
-    
 }
 
 .header-number-box{
@@ -340,9 +288,7 @@ a{
     
 }
 
-.player{
-    
-    
+.player{  
     background-color: #181818;
     margin-bottom: 1rem;
 }
@@ -361,8 +307,7 @@ a{
 
 }
 
-.player-box-input{
-    
+.player-box-input{    
     padding-left: .5rem;
     flex: 1;
     background:none;
@@ -370,12 +315,7 @@ a{
     color: var(--bg-white);
     font-family: var(--ff-saira);
     font-size: var(--fs-ms);
-    font-weight: var(--fw-s);
-    
-    /* padding-left: .5rem; */
-
-
-    
+    font-weight: var(--fw-s); 
 }
 
 .player-box-add{
@@ -401,7 +341,9 @@ a{
     width: 1.9rem;    
     background-color: rgb(14, 61, 47);    
 }
+/* -----------------------------------  MAIN END ------------------------------------ */
 
+/* ----------------------------------  MEDIA SCREEN ------------------------------------ */
 
 @media screen and (max-width: 605px) {
     .nav--top-info{
@@ -409,14 +351,14 @@ a{
     }
     
     .nav--main-menu{
-            justify-content: center;
-            gap: 0;
-            padding: 0;
-      }
+        justify-content: center;
+        gap: 0;
+        padding: 0;
+    }
     
     .nav--main-logo{
-          display: none;
-      }
+        display: none;
+    }
     
     .nav--main-item{
         text-align: center;
@@ -424,11 +366,10 @@ a{
         font-family: var(--ff-saira);
         font-size:var(--fs-s);
         font-weight: 400;
-        border: 1px solid rgb(44, 44, 44);
-        
-
+        border: 1px solid rgb(44, 44, 44);      
         background-color: #000000;
-      }
+    }
+
     .left--border{
         display: none;    
     }
@@ -436,20 +377,21 @@ a{
     .right--border{
         display: none; 
     }
-   
+}
+
+/* ----------------------------------  MEDIA SCREEN ------------------------------------ */   
     
     
-    }
-
-/*--------- size config END ---------*/
-
-/*-------- TOP INFO START --------*/
 
 
 
 
 
-/* ------------ player header box ------------- */
+
+
+
+
+
 
 
 .stats-list{
@@ -471,9 +413,3 @@ a{
     color: var(--bg-dark-grey);
 }
 
-/* .footer{
-    
-    background-color: var(--bg-dark-grey)  ;
-    flex: 1;
-    
-} */
