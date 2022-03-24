@@ -2,7 +2,7 @@ const playerSearchBtn = document.querySelector('#player-search-btn')
 
 const searchInput = document.querySelector('#input-player')
 
-const gameModeSelect = document.querySelector('#gamemode')
+
 
 const playerSearchInput = document.querySelector('#player-search-input')
 
@@ -54,100 +54,7 @@ const winsElement = document.querySelector('[data-wins]')
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-let player = `players?filter[playerNames]=`;  
-const player_url = `${player}`
-const api_url = `https://api.pubg.com/shards/${platform}/`
-let matchId = `0f5eb52e-1a48-40d3-962d-d63b30cffbf7`
-const matchId_url = `matches/${matchId}`
-
-
-
-function displayName(playerName){ 
-    console.log('this is your in game name', playerName)
-}
-
-function displayMatches(fetchMatches){
-    console.log('this is a players all matches', fetchMatches)
-}
-
-
-
-
-playerSearchBtn.addEventListener('click', async () => {
-    let playerName = searchInput.value;
-    searchInput.classList.toggle('hide');
-    headerPlayer.classList.toggle('hide');
-
-    
-    // const query = inputElem.value;
-    
-    playerData(playerName)
-    // displayTracks(result);
-});
-
-
-
-
-// --------- PLAYERDATA START --------- //
-
-async function playerData(playerName){
-    const response = await fetch(`${api_url}${player_url}${playerName}`, 
-    {"headers": {"authorization": `Bearer ${TOKEN} `, "Accept": "application/vnd.api+json"}});
-    const getPlayerData = await response.json();  
-     
-
-// find name //
-    // const namePath = Object.entries(getPlayerData.data[0].attributes)
-    // const getName = namePath.filter((playerName) => {
-    //         return playerName[0] === 'name'});
-    // const playerName = (getName[0].splice(1)[0])
-    //        displayName(playerName)
-// FIND NAME END //
-
-    const namePath = getPlayerData.data[0].attributes
-    nameElement.textContent = namePath.name
-    console.log(namePath)
-
-
-// FIND ID START //
-    const fetchId = getPlayerData.data[0].id
-    getId(fetchId)
-// FIND ID END //
-
-
-// FIND MATCH START //
-const fetchMatches = getPlayerData.data[0].relationships.matches.data.filter((playerMatches) =>{
-    return playerMatches.type === 'match'})
-displayMatches(fetchMatches)
-// FIND MATCH END //        
-};
-
-
-
-
-
-
-
-function score(assists){
-    console.log(assists)
-}
-
-
-
-function displayLifeTimeStats(pathAllStats){
-    
+function displayLifeTimeStats(pathAllStats){    
     assistsElement.textContent = pathAllStats.assists
     boostsElement.textContent = pathAllStats.boosts
     dBNOsElement.textContent = pathAllStats.dBNOs
@@ -174,59 +81,85 @@ function displayLifeTimeStats(pathAllStats){
     weaponsAcquiredElement.textContent = pathAllStats.weaponsAcquired    
     winPointsElement.textContent = pathAllStats.winPoints
     winsElement.textContent = pathAllStats.wins
-
     assists = pathAllStats.assists
-
-    score(assists )
-
-// boosts
-// dailyKills
-// dailyWins
-// days
-// headshotKills
-// heals
-// killPoints
-// longestKill
-// longestTimeSurvived
-// losses
-// maxKillStreaks
-// revives
-// rideDistance
-// roadKills
-// roundMostKills
-// roundsPlayed
-// suicides
-// swimDistance
-// teamKills
-// timeSurvived
-// top10s
-// vehicleDestroys
-// walkDistance
-// weaponsAcquired
-// weeklyKills
-// weeklyWins
-// winPoints
-// wins
-     
+    score(assists)     
 }
-let gamemode = `squad-fpp`
 
 
-// gameModeSelect.addEventListener('change', function() {
-//     let selectGameMode = this.value
 
-//     gamemode.push(selectGameMode);
+let player = `players?filter[playerNames]=`;  
+const player_url = `${player}`
+const api_url = `https://api.pubg.com/shards/${platform}/`
+let matchId = `0f5eb52e-1a48-40d3-962d-d63b30cffbf7`
+const matchId_url = `matches/${matchId}`
+
+
+
+function displayName(playerName){ 
+    console.log('this is your in game name', playerName)
+}
+
+function displayMatches(fetchMatches){
+    console.log('this is a players all matches', fetchMatches)
+}
+
+
+
+playerSearchBtn.addEventListener('click', async () => {
+    let playerName = searchInput.value;
+    searchInput.classList.toggle('hide');
+    headerPlayer.classList.toggle('hide');
     
+    // const query = inputElem.value;    
+    playerData(playerName)
+    // displayTracks(result);
+});
 
-   
-// }) 
 
 
+// --------- PLAYERDATA START --------- //
+
+async function playerData(playerName){
+    const response = await fetch(`${api_url}${player_url}${playerName}`, 
+    {"headers": {"authorization": `Bearer ${TOKEN} `, "Accept": "application/vnd.api+json"}});
+    const getPlayerData = await response.json();      
+    const namePath = getPlayerData.data[0].attributes
+    nameElement.textContent = namePath.name
+    console.log(namePath)
+
+// FIND ID START //
+    const fetchId = getPlayerData.data[0].id
+    getId(fetchId)
+// FIND ID END //
+
+
+// FIND MATCH START //
+const fetchMatches = getPlayerData.data[0].relationships.matches.data.filter((playerMatches) =>{
+    return playerMatches.type === 'match'})
+displayMatches(fetchMatches)
+// FIND MATCH END //        
+};
+
+
+
+function score(assists){
+    console.log(assists)
+}
+
+function optionGamemode(){
+    gameModeSelect.addEventListener('input', function () {
         
-       
+        // console.log(this.value)
+        let gamemode = this.value
+        getId(gamemode)
+
+    });
+   
+
+}
 
 
-async function getId(fetchId){
+async function getId(fetchId, gamemode){
     const lifetime_url = `players/${fetchId}/seasons/lifetime`
     const secondResponse = await fetch(`${api_url}${lifetime_url}`, 
     {"headers": {"authorization": `Bearer ${TOKEN} `, "Accept": "application/vnd.api+json"}});
@@ -239,28 +172,6 @@ async function getId(fetchId){
     displayLifeTimeStats(pathAllStats) 
     console.log(pathAllStats)
 }
-
- 
-
-// TELEMETRY DATA START //
-
-
-
-async function matchTelemetry(telemetryURL){
-    const forthResponse = await fetch(`${telemetryURL}`,
-    {"headers": {"Accept": "application/vnd.api+json" }});
-    const telemetricData = await forthResponse.json()
-    console.log(telemetricData)   
-}
-
-function displayTelemetry(telemetrydata){   
-    let telemetryURL = telemetrydata[0].attributes.URL
-    matchTelemetry(telemetryURL)
-}
-// TELEMETRY DATA END //
-
-
-
 
 
 
@@ -294,4 +205,27 @@ async function matchData(){
 // console.log(telemetrydata)
 
 
-   
+   // TELEMETRY DATA START //
+
+
+
+// async function matchTelemetry(telemetryURL){
+//     const forthResponse = await fetch(`${telemetryURL}`,
+//     {"headers": {"Accept": "application/vnd.api+json" }});
+//     const telemetricData = await forthResponse.json()
+//     console.log(telemetricData)   
+// }
+
+// function displayTelemetry(telemetrydata){   
+//     let telemetryURL = telemetrydata[0].attributes.URL
+//     matchTelemetry(telemetryURL)
+// }
+// TELEMETRY DATA END //
+
+const gameModeSelect = document.querySelector('#gamemode')
+
+
+
+
+
+optionGamemode()
