@@ -235,21 +235,10 @@ async function getSeasons(){
     console.log(seasonData.data.attributes)
 
     // let sData = seasonData.data
-    
 
-    
-    
     // for (const track of sData){
     //     if (track.id)
     //     console.log(track.id)
-
-    
-
-    
-
-
-
-
 }
 
 
