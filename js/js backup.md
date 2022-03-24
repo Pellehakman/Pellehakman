@@ -89,15 +89,7 @@ function displayLifeTimeStats(pathAllStats){
 let platform = `steam`
 let player = `players?filter[playerNames]=`;  
 const player_url = `${player}`
-const api_url = `https://api.pubg.com/shards/${platform}/` 
-
-
-// /players/{accountId}/seasons/lifetime
-// /players/{account.9ab7cc13c94440fab5af3c22b6d78144}/division.bro.official.pc-2018-16/lifetime
-
-
-
-
+const api_url = `https://api.pubg.com/shards/${platform}/`
 let matchId = `0f5eb52e-1a48-40d3-962d-d63b30cffbf7`
 const matchId_url = `matches/${matchId}`
 
@@ -155,20 +147,31 @@ function score(assists){
 }
 
 
+function optionGamemode(){
+    gameModeSelect.addEventListener('input', function () {      
+      let gamemodes = this.value
+        console.log(gamemodes)
+        
+        
 
+    });
+   
+
+}
+let gamemode = `squad-fpp`
 
 async function getId(fetchId){
-    const lifetime_url = `players/${fetchId}/seasons/lifetime`   
+    const lifetime_url = `players/${fetchId}/seasons/lifetime`
     const secondResponse = await fetch(`${api_url}${lifetime_url}`, 
     {"headers": {"authorization": `Bearer ${TOKEN} `, "Accept": "application/vnd.api+json"}});
-    const lifetimeData = await secondResponse.json()   
+    const lifetimeData = await secondResponse.json()    
+    
     console.log('this is your id', fetchId)
 
-    gameModeSelect.addEventListener('input', function () {      
-        let gamemode = this.value
-        let pathAllStats = (lifetimeData.data.attributes.gameModeStats[`${gamemode}`])
-          displayLifeTimeStats(pathAllStats) 
-      }) 
+    let pathAllStats = (lifetimeData.data.attributes.gameModeStats[`${gamemode}`])
+
+    displayLifeTimeStats(pathAllStats) 
+    console.log(pathAllStats)
 }
 
 
@@ -223,35 +226,6 @@ const gameModeSelect = document.querySelector('#gamemode')
 
 
 
-let ranked = `/ranked`
-
-async function getSeasons(){
-
-    const test_url = `https://api.pubg.com/shards/steam/players/account.9ab7cc13c94440fab5af3c22b6d78144/seasons/division.bro.official.pc-2018-16${ranked}`
-    const seasons_url = `https://api.pubg.com/shards/steam/seasons`
-    const seasonResponse = await fetch(`${test_url}`, 
-    {"headers": {"authorization": `Bearer ${TOKEN} `, "Accept": "application/vnd.api+json"}});
-    const seasonData = await seasonResponse.json() 
-    console.log(seasonData.data.attributes)
-
-    // let sData = seasonData.data
-    
-
-    
-    
-    // for (const track of sData){
-    //     if (track.id)
-    //     console.log(track.id)
-
-    
-
-    
 
 
-
-
-}
-
-
-
-getSeasons()
+optionGamemode()
